@@ -6,18 +6,18 @@ fake = Faker("en_US")
 def print_bs_article():
     content = ""
     for i in range(100):
-        contents += fake.paragraph()
-        contents += " " + fake.email() + " "
-        contents += fake.sentence()
-        contents += fake.phone_number()
-        contents += fake.paragraph()
-    print(content)
+        content += fake.paragraph()
+        content += " " + fake.email() + " "
+        content += fake.sentence()
+        content += fake.phone_number()
+        content += fake.paragraph()
+    return content
 
 
-print_bs_article()
+output = print_bs_article()
 
 with open("potential-contacts.txt", "w") as f:
-    f.write(potential_contacts)
+    f.write(output)
 
 with open("existing-contacts.txt", "w") as f:
-    f.write(existing_contacts)
+    f.write(f"{print_bs_article()}")
