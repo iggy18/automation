@@ -16,8 +16,8 @@ def print_bs_article():
 
 output = print_bs_article()
 
-with open("potential-contacts.txt", "w") as f:
+with open("potential_contacts_test.txt", "w") as f:
     f.write(output)
 
-with open("existing-contacts.txt", "w") as f:
-    f.write(f"{print_bs_article()}")
+with open("existing_contacts_test.txt", "w") as f:
+    f.write(output)
