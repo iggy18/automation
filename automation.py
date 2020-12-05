@@ -18,11 +18,12 @@ def numbers(file_to_be_written_to):
         phone_numbers_in_file = f.read()
         regex = r"\(?\d{3}\)?[-\s]?\d{3}[-\s]?\d{4}"
         phone_numbers = re.findall(regex, phone_numbers_in_file)
-        phone_numbers.replace("(", "")
-        phone_numbers.sort()
+        replace1 = [number.replace("(", "") for number in phone_numbers]
+        final_product = [number.replace(")", "-") for number in replace1]
+        final_product.sort()
 
     with open(file_to_be_written_to, "w") as f:
-        for contact in phone_numbers:
+        for contact in final_product:
             f.write(contact + "\n")
 
 
